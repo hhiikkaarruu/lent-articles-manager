@@ -6,6 +6,9 @@ import (
 
 func GetRouter() (r *gin.Engine) {
 	r = gin.Default()
-	r.GET("/ping", showJsonPong)
+	r.LoadHTMLGlob("view/*")
+
+	r.GET("/ping", showJsonPong) // sample
+	r.GET("/", showHomePage)
 	return
 }

@@ -11,3 +11,7 @@ func showJsonPong(c *gin.Context) {
 		"message": "pong",
 	})
 }
+
+func showHomePage(c *gin.Context) {
+	c.HTML(http.StatusOK, "index.html", gin.H{})
+}
