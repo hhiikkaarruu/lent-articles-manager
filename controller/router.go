@@ -1,4 +1,4 @@
-package main
+package controller
 
 import (
 	"net/http"
@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func setupRouter() (r *gin.Engine) {
+func GetRouter() (r *gin.Engine) {
 	r = gin.Default()
 	r.GET("/ping", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
@@ -14,9 +14,4 @@ func setupRouter() (r *gin.Engine) {
 		})
 	})
 	return
-}
-
-func main() {
-	r := setupRouter()
-	r.Run(":8080")
 }
